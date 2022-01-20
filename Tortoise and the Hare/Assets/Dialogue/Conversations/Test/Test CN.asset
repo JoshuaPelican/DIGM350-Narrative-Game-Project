@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e970714e3f175e4b9ebee1bdbcab469, type: 3}
+  m_Name: Test CN
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 0ef4ce6e90473754a922569eaafd7f9f, type: 2}
+  Text: This is a test choice dialogue
+  Choices:
+  - {fileID: 11400000, guid: 2ae5f42505cccc44c844dae2fc76aa35, type: 2}
+  - {fileID: 11400000, guid: c61361e3ce4856941bcb95b2f3c72ae3, type: 2}
+  - {fileID: 11400000, guid: 7fcf08e62ba1f3d4b9d2c92946f24703, type: 2}
