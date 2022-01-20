@@ -10,5 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38b7f443a2326e84393c71b9d211bc74, type: 3}
-  m_Name: Test Character
+  m_Name: Bunny
   m_EditorClassIdentifier: 
+  OnNodeStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnNodeEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnConversationStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnConversationEnd:
+    m_PersistentCalls:
+      m_Calls: []

@@ -1,13 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Conversation", menuName = "Dialogue/Conversation")]
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Dialogue")]
 public class Conversation : ScriptableObject
 {
-    public Node FirstNode;
+    public Character Speaker;
 
-    public Node VisitedNode;
-
+    public Node StartingNode;
     public Node CancelledNode;
-    public Node CancelledVisitNode;
+    public Node ReturningNode;
+    public Node FinishedNode;
+
+    public bool Started;
+    public bool Finished;
+
+    [HideInInspector]
+    public Node CurrentNode;
 }
