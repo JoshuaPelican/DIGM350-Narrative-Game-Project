@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Conditional Node", menuName = "Dialogue/Conditional Node")]
+[CreateAssetMenu(fileName = "CD_NewConditional", menuName = "Dialogue/Conditional Node")]
 public class ConditionalNode : Node
 {
     public Condition condition;

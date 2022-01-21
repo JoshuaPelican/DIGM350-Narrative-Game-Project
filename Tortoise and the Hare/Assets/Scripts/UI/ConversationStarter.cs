@@ -1,20 +1,21 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class ConversationStarter : MonoBehaviour
 {
     [SerializeField] Conversation Conversation;
 
-    [SerializeField] TextMeshProUGUI characterTextMesh;
-    [SerializeField] TextMeshProUGUI dialogueTextMesh;
-
-    [SerializeField] GameObject popup;
+    Popup popup;
 
     Node currentNode;
     Node queuedNode;
 
     bool speaking;
+
+    private void Awake()
+    {
+        popup = GetComponentInChildren<Popup>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -53,7 +54,7 @@ public class ConversationStarter : MonoBehaviour
             {
                 StartNode(Conversation.CancelledNode);
                 Conversation.CurrentNode = currentNode;
-                RemovePopup();
+                popup.RemovePopup();
             }
         }
     }
@@ -65,13 +66,13 @@ public class ConversationStarter : MonoBehaviour
 
         if (node)
         {
-            DisplayPopup(node);
+            popup.DisplayPopup(node);
 
             StartCoroutine(TypeDialogue(node));
         }
         else
         {
-            RemovePopup();
+            popup.RemovePopup();
         }
     }
 
@@ -80,27 +81,14 @@ public class ConversationStarter : MonoBehaviour
         queuedNode = node;
     }
 
-    void DisplayPopup(Node node)
-    {
-        popup.SetActive(true);
-
-        characterTextMesh.SetText(node.Speaker.name);
-    }
-
-    void RemovePopup()
-    {
-        StopAllCoroutines();
-        popup.SetActive(false);
-    }
-
     IEnumerator TypeDialogue(Node node)
     {
         speaking = true;
-        dialogueTextMesh.SetText(string.Empty);
+        popup.DialogueTextMesh.SetText(string.Empty);
 
         foreach (char c in node.Text.ToCharArray())
         {
-            dialogueTextMesh.text += c;
+            popup.DialogueTextMesh.text += c;
             yield return new WaitForSeconds(1 - node.DialogueSpeed);
         }
         speaking = false;
@@ -128,9 +116,14 @@ public class ConversationStarter : MonoBehaviour
             DialogueNode dNode = (DialogueNode)node;
 
             if (dNode.NextNode)
+            {
                 StartNode(dNode.NextNode);
+            }
             else
-                RemovePopup();
+            {
+                Conversation.Finished = true;
+                popup.RemovePopup();
+            }
         }
         else if(node is ConditionalNode)
         {

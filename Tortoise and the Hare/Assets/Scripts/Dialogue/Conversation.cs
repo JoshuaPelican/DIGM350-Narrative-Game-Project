@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue/Dialogue")]
+[CreateAssetMenu(fileName = "C_NewConvo", menuName = "Dialogue/Conversation")]
 public class Conversation : ScriptableObject
 {
     public Character Speaker;
