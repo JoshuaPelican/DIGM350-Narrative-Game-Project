@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
   StartingNode: {fileID: 11400000, guid: d2d0ad7e152e34d4c85af204c29a83dd, type: 2}
-  CancelledNode: {fileID: 0}
+  CancelledNode: {fileID: 11400000, guid: d44fa0d16ce543c488c5610a3b3c0af8, type: 2}
   ReturningNode: {fileID: 0}
   FinishedNode: {fileID: 11400000, guid: 73ae3ca9683f7364aae3a2fcac45fea2, type: 2}
-  Started: 0
+  Started: 1
   Finished: 0
   CurrentNode: {fileID: 0}

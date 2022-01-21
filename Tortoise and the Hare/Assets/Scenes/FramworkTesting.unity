@@ -413,6 +413,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  hasJumped: {fileID: 11400000, guid: e238aeb3b1cb6cf4fafa5ff6b99a3c35, type: 2}
 --- !u!114 &1023428687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +755,7 @@ GameObject:
   - component: {fileID: 2072755033}
   - component: {fileID: 2072755032}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,6 +1013,10 @@ PrefabInstance:
     - target: {fileID: 4278216879597271935, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: m_Name
       value: Conversation Starter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278216879704285396, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_Name
+      value: Popup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8548fe143444dd49a95cb2673143105, type: 3}

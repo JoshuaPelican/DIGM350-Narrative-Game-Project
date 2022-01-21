@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: D_Bunny01
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
-  Text: This is the first dialogue for the Bunny conversation!
   DialogueSpeed: 0.95
   FinishDelay: 3
-  Visited: 0
+  Visited: 1
+  Text: This is the first dialogue for the Bunny conversation!
   NextNode: {fileID: 11400000, guid: 26dbd1ce87723134b9dbdcbf1e663e74, type: 2}

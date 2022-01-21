@@ -6,12 +6,14 @@ public class Popup : MonoBehaviour
     public TextMeshProUGUI characterTextMesh;
     public TextMeshProUGUI DialogueTextMesh;
 
+    public GameObject popupBase;
+
     Transform cameraTransform;
 
     private void Start()
     {
         cameraTransform = Camera.main.transform;
-        gameObject.SetActive(false);
+        popupBase.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -21,13 +23,13 @@ public class Popup : MonoBehaviour
 
     public void DisplayPopup(Node node)
     {
-        gameObject.SetActive(true);
+        popupBase.SetActive(true);
 
         characterTextMesh.SetText(node.Speaker.name);
     }
 
     public void RemovePopup()
     {
-        gameObject.SetActive(false);
+        popupBase.SetActive(false);
     }
 }

@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     [SerializeField] float moveSpeed = 6;
     [SerializeField] float jumpHeight = 0.5f;
 
+    [Header("Ground Settings")]
     [SerializeField] float groundedRadius = 0.25f;
     [SerializeField] float groundedDistance = 0.65f;
     [SerializeField] LayerMask groundLayer;
+
+    [Header("Testing Settings - Please Remove!")]
+    [SerializeField] Condition hasJumped;
 
     Rigidbody rig;
     float gravity = Physics.gravity.y;
@@ -49,6 +54,9 @@ public class FPSMovement : MonoBehaviour
         {
             //Gain velocity proportional to jump height
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+            //Testing
+            hasJumped.Value = true;
         }
 
         //Apply gravity over time

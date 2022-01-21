@@ -12,7 +12,7 @@ public class ConversationStarter : MonoBehaviour
 
     bool speaking;
 
-    private void Awake()
+    private void Start()
     {
         popup = GetComponentInChildren<Popup>();
     }
@@ -20,28 +20,43 @@ public class ConversationStarter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //If the player enters the trigger
-
         if (other.CompareTag("Player"))
-        {
+        {        
             //Popup the conversation and play the correct line
-            if (!Conversation.Started)
-            {
-                StartNode(Conversation.StartingNode);
-                Conversation.Started = true;
-            }
-            else if (Conversation.Started && !Conversation.Finished && Conversation.CurrentNode)
+            CheckConversationNode();
+        }
+    }
+
+    //TODO: Reformat this part of the code, make it concise using one 1 current node slot if possible.
+
+    void CheckConversationNode()
+    {
+        //If the conversation has never started yet, play the starting node
+        if (!Conversation.Started)
+        {
+            StartNode(Conversation.StartingNode);
+            Conversation.Started = true;
+        }
+        //If the conversation has started but not finished, then return and play the last not visited node
+        else if (Conversation.Started && !Conversation.Finished)
+        {
+            if (Conversation.ReturningNode)
             {
                 StartNode(Conversation.ReturningNode);
                 QueueNode(Conversation.CurrentNode);
             }
-            else if (Conversation.Finished)
-            {
-                StartNode(Conversation.FinishedNode);
-            }
             else
             {
-                Debug.LogError("Unknown Dialogue Condition Found! Get Josh To Fix This!");
+                StartNode(Conversation.CurrentNode);
             }
+        }
+        else if (Conversation.Finished)
+        {
+            StartNode(Conversation.FinishedNode);
+        }
+        else
+        {
+            Debug.LogError("Unknown Dialogue Condition Found! Get Josh To Fix This!");
         }
     }
 
@@ -50,10 +65,14 @@ public class ConversationStarter : MonoBehaviour
         //If the player leaves the trigger
         if (other.CompareTag("Player"))
         {
+            Conversation.CurrentNode = currentNode;
+
             if (speaking)
             {
                 StartNode(Conversation.CancelledNode);
-                Conversation.CurrentNode = currentNode;
+            }
+            else if(!speaking)
+            {
                 popup.RemovePopup();
             }
         }
@@ -119,26 +138,28 @@ public class ConversationStarter : MonoBehaviour
             {
                 StartNode(dNode.NextNode);
             }
-            else
+            else if (node != Conversation.CancelledNode)
             {
                 Conversation.Finished = true;
                 popup.RemovePopup();
             }
+            else
+            {
+                popup.RemovePopup();
+            }
         }
-        else if(node is ConditionalNode)
+        else if (node is ConditionalNode)
         {
             ConditionalNode cNode = (ConditionalNode)node;
 
-            if (cNode.condition == true)
+            if (cNode.condition.Value == true)
             {
                 StartNode(cNode.TrueNode);
             }
-            else if(cNode.condition == false)
+            else if (cNode.condition.Value == false)
             {
                 StartNode(cNode.FalseNode);
             }
         }
-
-        currentNode = null;
     }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
-  m_Name: D_Bunny02
+  m_Name: D_BunnyJumped
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
-  DialogueSpeed: 0.9
+  DialogueSpeed: 0.95
   FinishDelay: 3
-  Visited: 1
-  Text: This is the second dialogue for the Bunny conversation! It has a slower speed!
-  NextNode: {fileID: 11400000, guid: 31d077b6d199ed64ba6fdad4b1633bc6, type: 2}
+  Visited: 0
+  Text: Congrats! You have jumped!
+  NextNode: {fileID: 0}
