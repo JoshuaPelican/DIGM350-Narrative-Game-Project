@@ -43,7 +43,6 @@ public class ConversationStarter : MonoBehaviour
             if (Conversation.ReturningNode)
             {
                 StartNode(Conversation.ReturningNode);
-                QueueNode(Conversation.CurrentNode);
             }
             else
             {
@@ -67,11 +66,11 @@ public class ConversationStarter : MonoBehaviour
         {
             Conversation.CurrentNode = currentNode;
 
-            if (speaking)
+            if (speaking && currentNode != Conversation.FinishedNode)
             {
                 StartNode(Conversation.CancelledNode);
             }
-            else if(!speaking)
+            else
             {
                 popup.RemovePopup();
             }
@@ -85,9 +84,16 @@ public class ConversationStarter : MonoBehaviour
 
         if (node)
         {
-            popup.DisplayPopup(node);
+            if (!node.Visited)
+            {
+                popup.DisplayPopup(node);
 
-            StartCoroutine(TypeDialogue(node));
+                StartCoroutine(TypeDialogue(node));
+            }
+            else
+            {
+                EndNode(node);
+            }
         }
         else
         {
@@ -117,7 +123,7 @@ public class ConversationStarter : MonoBehaviour
 
     IEnumerator DialogueDelay(Node node)
     {
-        node.Visited = true;
+        node.Visit();
 
         yield return new WaitForSeconds(node.FinishDelay);
 
@@ -126,6 +132,13 @@ public class ConversationStarter : MonoBehaviour
 
     void EndNode(Node node)
     {
+        //Clear the queue if needed
+        if (node == queuedNode)
+        {
+            queuedNode = null;
+        }
+
+        //Determine what to do next
         if (queuedNode)
         {
             StartNode(queuedNode);

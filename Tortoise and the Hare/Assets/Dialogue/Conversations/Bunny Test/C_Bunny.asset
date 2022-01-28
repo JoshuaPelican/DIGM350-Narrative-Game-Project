@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ab02eb09286a44c8359ed9bd5641c0, type: 3}
-  m_Name: C_BunnyTest
+  m_Name: C_Bunny
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
   StartingNode: {fileID: 11400000, guid: d2d0ad7e152e34d4c85af204c29a83dd, type: 2}
   CancelledNode: {fileID: 11400000, guid: d44fa0d16ce543c488c5610a3b3c0af8, type: 2}
-  ReturningNode: {fileID: 0}
+  ReturningNode: {fileID: 11400000, guid: 3a29f8235348659478f8ad9449d96d56, type: 2}
   FinishedNode: {fileID: 11400000, guid: 73ae3ca9683f7364aae3a2fcac45fea2, type: 2}
-  Started: 1
+  Started: 0
   Finished: 0
   CurrentNode: {fileID: 0}

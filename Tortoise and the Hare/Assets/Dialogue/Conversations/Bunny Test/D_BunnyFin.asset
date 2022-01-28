@@ -18,4 +18,8 @@ MonoBehaviour:
   Visited: 1
   Text: This is the repeated dialogue that plays when you have finished the Bunny
     conversation!
+  OnNodeVisited:
+    m_PersistentCalls:
+      m_Calls: []
+  ConditionsToSet: []
   NextNode: {fileID: 0}

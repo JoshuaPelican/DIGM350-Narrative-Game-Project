@@ -15,9 +15,25 @@ MonoBehaviour:
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
   DialogueSpeed: 0.95
   FinishDelay: 3
-  Visited: 0
+  Visited: 1
   Text: This is a conditional dialogue for the Bunny conversation! The following
     node that plays will depend on a specified condition.
+  OnNodeVisited:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
+        m_TargetAssemblyTypeName: FloatVariable, Assembly-CSharp
+        m_MethodName: AddValue
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ConditionsToSet: []
   condition: {fileID: 11400000, guid: e238aeb3b1cb6cf4fafa5ff6b99a3c35, type: 2}
   TrueNode: {fileID: 11400000, guid: 3a996b8262efc494fa6e210934c562b2, type: 2}
   FalseNode: {fileID: 11400000, guid: bc510d3f81e84634a805c5fdecff23d5, type: 2}

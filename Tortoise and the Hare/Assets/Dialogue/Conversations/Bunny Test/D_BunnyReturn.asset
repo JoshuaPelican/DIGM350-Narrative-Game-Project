@@ -10,27 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
-  m_Name: D_BunnyCancel
+  m_Name: D_BunnyReturn
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
   DialogueSpeed: 0.95
   FinishDelay: 3
   Visited: 0
-  Text: Hey, I wasnt done talking! Get back here!
+  Text: Ah, you are back! Now as I was saying...
   OnNodeVisited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
-        m_TargetAssemblyTypeName: FloatVariable, Assembly-CSharp
-        m_MethodName: AddValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   ConditionsToSet: []
   NextNode: {fileID: 0}
