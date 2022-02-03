@@ -13,24 +13,9 @@ MonoBehaviour:
   m_Name: D_Bunny01
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
+  Dialogue: Hi! Nice to meet you!
   DialogueSpeed: 0.95
-  FinishDelay: 3
-  Visited: 1
-  Text: This is the first dialogue for the Bunny conversation!
-  OnNodeVisited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
-        m_TargetAssemblyTypeName: FloatVariable, Assembly-CSharp
-        m_MethodName: AddValue
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  FinishDelay: 1
   ConditionsToSet: []
-  NextNode: {fileID: 11400000, guid: 26dbd1ce87723134b9dbdcbf1e663e74, type: 2}
+  Visited: 1
+  nextNode: {fileID: 11400000, guid: 26dbd1ce87723134b9dbdcbf1e663e74, type: 2}

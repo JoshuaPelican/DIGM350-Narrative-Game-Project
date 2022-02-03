@@ -10,7 +10,7 @@ public class Popup : MonoBehaviour
 
     Transform cameraTransform;
 
-    private void Start()
+    private void Awake()
     {
         cameraTransform = Camera.main.transform;
         popupBase.SetActive(false);

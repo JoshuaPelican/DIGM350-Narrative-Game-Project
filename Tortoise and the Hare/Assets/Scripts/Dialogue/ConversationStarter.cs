@@ -7,12 +7,10 @@ public class ConversationStarter : MonoBehaviour
 
     Popup popup;
 
-    Node currentNode;
-    Node queuedNode;
-
+    bool listening;
     bool speaking;
 
-    private void Start()
+    private void Awake()
     {
         popup = GetComponentInChildren<Popup>();
     }
@@ -21,16 +19,27 @@ public class ConversationStarter : MonoBehaviour
     {
         //If the player enters the trigger
         if (other.CompareTag("Player"))
-        {        
+        {
             //Popup the conversation and play the correct line
-            CheckConversationNode();
+            EnterConversation();
         }
     }
 
     //TODO: Reformat this part of the code, make it concise using one 1 current node slot if possible.
 
-    void CheckConversationNode()
+    private void OnTriggerExit(Collider other)
     {
+        //If the player leaves the trigger
+        if (other.CompareTag("Player"))
+        {
+            ExitConversation();
+        }
+    }
+
+    void EnterConversation()
+    {
+        listening = true;
+
         //If the conversation has never started yet, play the starting node
         if (!Conversation.Started)
         {
@@ -46,9 +55,10 @@ public class ConversationStarter : MonoBehaviour
             }
             else
             {
-                StartNode(Conversation.CurrentNode);
+                StartNode(Conversation.NextNode());
             }
         }
+        //If the conversation is complete, start the looping finished node
         else if (Conversation.Finished)
         {
             StartNode(Conversation.FinishedNode);
@@ -59,59 +69,41 @@ public class ConversationStarter : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void ExitConversation()
     {
-        //If the player leaves the trigger
-        if (other.CompareTag("Player"))
-        {
-            Conversation.CurrentNode = currentNode;
+        listening = false;
 
-            if (speaking && currentNode != Conversation.FinishedNode)
-            {
-                StartNode(Conversation.CancelledNode);
-            }
-            else
-            {
-                popup.RemovePopup();
-            }
+        //If the dialogue is in progress, and the conversation has not finished, and there is cancel dialogue, then start it.
+        if (!Conversation.Finished && Conversation.CancelledNode)
+        {
+            StartNode(Conversation.CancelledNode);
         }
     }
 
     void StartNode(Node node)
     {
-        currentNode = node;
         StopAllCoroutines();
 
+        //If node exists.
         if (node)
         {
-            if (!node.Visited)
-            {
-                popup.DisplayPopup(node);
-
-                StartCoroutine(TypeDialogue(node));
-            }
-            else
-            {
-                EndNode(node);
-            }
+            popup.DisplayPopup(node);
+            StartCoroutine(TypeDialogue(node));
         }
+        //Node is null, remove the popup.
         else
         {
-            popup.RemovePopup();
+            EndConversation();
         }
     }
 
-    void QueueNode(Node node)
-    {
-        queuedNode = node;
-    }
-
+    //Types out dialogue text based on speed
     IEnumerator TypeDialogue(Node node)
     {
         speaking = true;
         popup.DialogueTextMesh.SetText(string.Empty);
 
-        foreach (char c in node.Text.ToCharArray())
+        foreach (char c in node.Dialogue.ToCharArray())
         {
             popup.DialogueTextMesh.text += c;
             yield return new WaitForSeconds(1 - node.DialogueSpeed);
@@ -121,58 +113,29 @@ public class ConversationStarter : MonoBehaviour
         StartCoroutine(DialogueDelay(node));
     }
 
+    //Wait for full delay based on node's delay
+    //Declares a node to be finished
     IEnumerator DialogueDelay(Node node)
     {
         node.Visit();
-
         yield return new WaitForSeconds(node.FinishDelay);
-
-        EndNode(node);
+        EndNode();
     }
 
-    void EndNode(Node node)
+    //When a node is complete, if player still listening, move to next node
+    //Otherwise player is gone, end conversation
+    void EndNode()
     {
-        //Clear the queue if needed
-        if (node == queuedNode)
-        {
-            queuedNode = null;
-        }
+        if (listening)
+            StartNode(Conversation.NextNode());
+        else
+            EndConversation();
+    }
 
-        //Determine what to do next
-        if (queuedNode)
-        {
-            StartNode(queuedNode);
-        }
-        else if (node is DialogueNode)
-        {
-            DialogueNode dNode = (DialogueNode)node;
-
-            if (dNode.NextNode)
-            {
-                StartNode(dNode.NextNode);
-            }
-            else if (node != Conversation.CancelledNode)
-            {
-                Conversation.Finished = true;
-                popup.RemovePopup();
-            }
-            else
-            {
-                popup.RemovePopup();
-            }
-        }
-        else if (node is ConditionalNode)
-        {
-            ConditionalNode cNode = (ConditionalNode)node;
-
-            if (cNode.condition.Value == true)
-            {
-                StartNode(cNode.TrueNode);
-            }
-            else if (cNode.condition.Value == false)
-            {
-                StartNode(cNode.FalseNode);
-            }
-        }
+    //Stops all dialogue and removes popup
+    void EndConversation()
+    {
+        StopAllCoroutines();
+        popup.RemovePopup();
     }
 }

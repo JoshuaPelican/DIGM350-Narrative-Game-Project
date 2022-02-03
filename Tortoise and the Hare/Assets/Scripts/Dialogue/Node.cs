@@ -1,52 +1,33 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
+using Sirenix.OdinInspector;
+using System.Linq;
 
 public class Node : ScriptableObject
 {
-    [Header("Speaker Settings")]
+    [PropertyOrder(0)]
+    [TitleGroup("Speaker Settings")]
     public Character Speaker;
 
-    [Header("Text Speed Settings")]
-    [Range(0, 1)] public float DialogueSpeed = 0.95f;
-    public float FinishDelay = 3f;
-    [Space(10)]
-    public bool Visited;
-
-    [Header("Dialogue Settings")]
+    [PropertyOrder(1)]
+    [TitleGroup("Dialogue Settings")]
     [TextArea(3, 10)]
-    public string Text;
+    public string Dialogue;
 
-    public UnityEvent OnNodeVisited;
+    [TitleGroup("Extra Settings")]
+    [PropertyOrder(4)]
+    [Range(0, 1)] public float DialogueSpeed = 0.95f;
+    [PropertyOrder(5)]
+    public float FinishDelay = 1f;
 
-    [Space()]
+    [Space(10)]
+    [PropertyOrder(6)]
+    [ValueDropdown("GetAllConditions", FlattenTreeView = true, DropdownTitle = "Select A Condition")]
     public Condition[] ConditionsToSet;
 
-    [MenuItem("Dialogue/Clear Dialogue Progression")]
-    public static void ClearDialogueProgression()
-    {
-        string[] nodeStrings = AssetDatabase.FindAssets("t:node", new[] { "Assets/Dialogue" });
-        foreach (string asset in nodeStrings)
-        {
-            string path = AssetDatabase.GUIDToAssetPath(asset);
-            AssetDatabase.LoadAssetAtPath<Node>(path).Visited = false;
-        }
-
-        Debug.Log($"{nodeStrings.Length} Nodes had their Progression cleared!");
-
-        string[] convoStrings = AssetDatabase.FindAssets("t:Conversation", new[] { "Assets/Dialogue" });
-        foreach (string asset in convoStrings)
-        {
-            string path = AssetDatabase.GUIDToAssetPath(asset);
-            Conversation convo = AssetDatabase.LoadAssetAtPath<Conversation>(path);
-            convo.Started = false;
-            convo.Finished = false;
-            convo.CurrentNode = null;
-        }
-
-        Debug.Log($"{convoStrings.Length} Conversations had their progression cleared!");
-    }
-
+    [HideInInspector]
+    public bool Visited;
 
     public void Visit()
     {
@@ -56,7 +37,17 @@ public class Node : ScriptableObject
         {
             condition.Value = true;
         }
+    }
 
-        OnNodeVisited.Invoke();
+    public virtual Node NextNode()
+    {
+        return null;
+    }
+
+    static IEnumerable GetAllConditions()
+    {
+        return AssetDatabase.FindAssets("t:condition", new[] { "Assets/Dialogue" })
+            .Select(x => AssetDatabase.GUIDToAssetPath(x))
+            .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<Condition>(x).name, AssetDatabase.LoadAssetAtPath<Condition>(x)));
     }
 }
