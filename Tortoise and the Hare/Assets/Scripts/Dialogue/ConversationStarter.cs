@@ -97,6 +97,7 @@ public class ConversationStarter : MonoBehaviour
         }
     }
 
+    //Types out dialogue text based on speed
     IEnumerator TypeDialogue(Node node)
     {
         speaking = true;
@@ -112,6 +113,8 @@ public class ConversationStarter : MonoBehaviour
         StartCoroutine(DialogueDelay(node));
     }
 
+    //Wait for full delay based on node's delay
+    //Declares a node to be finished
     IEnumerator DialogueDelay(Node node)
     {
         node.Visit();
@@ -119,6 +122,8 @@ public class ConversationStarter : MonoBehaviour
         EndNode();
     }
 
+    //When a node is complete, if player still listening, move to next node
+    //Otherwise player is gone, end conversation
     void EndNode()
     {
         if (listening)
@@ -127,6 +132,7 @@ public class ConversationStarter : MonoBehaviour
             EndConversation();
     }
 
+    //Stops all dialogue and removes popup
     void EndConversation()
     {
         StopAllCoroutines();

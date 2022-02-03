@@ -16,6 +16,8 @@ public class Conversation : ScriptableObject
     public bool Started;
     public bool Finished;
 
+    //Retrieves the next node in the conversation
+    //Returns null if there is no non-visited nodes left
     public Node NextNode()
     {
         Node nextNode = StartingNode;
