@@ -823,7 +823,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072755031}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &2072755035
 Transform:
   m_ObjectHideFlags: 0
@@ -978,6 +978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072755035}
     m_Modifications:
+    - target: {fileID: 4278216878475670363, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4278216879597271920, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1030,9 +1034,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conversation Starter
       objectReference: {fileID: 0}
+    - target: {fileID: 4278216879704285384, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4278216879704285396, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: m_Name
       value: Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278216879704285397, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278216879704285397, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278216879953977763, guid: a8548fe143444dd49a95cb2673143105, type: 3}
+      propertyPath: m_fontSize
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8548fe143444dd49a95cb2673143105, type: 3}

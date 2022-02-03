@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: D_BunnyFin
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
+  Dialogue: Nice of you to visit, but I dont have anything more for you!
   DialogueSpeed: 0.95
-  FinishDelay: 3
-  Visited: 1
-  Text: This is the repeated dialogue that plays when you have finished the Bunny
-    conversation!
-  OnNodeVisited:
-    m_PersistentCalls:
-      m_Calls: []
+  FinishDelay: 1
   ConditionsToSet: []
-  NextNode: {fileID: 0}
+  Visited: 1
+  nextNode: {fileID: 0}
