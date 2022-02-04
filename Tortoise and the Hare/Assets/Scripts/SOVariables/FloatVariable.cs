@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "New Float Variable", menuName = "SO/Float Variable")]
+[CreateAssetMenu(fileName = "New Float Variable", menuName = "Variables/Float")]
 public class FloatVariable : ScriptableObject
 {
     public float Value { get; private set; }
@@ -23,7 +23,7 @@ public class FloatVariable : ScriptableObject
     [MenuItem("SO/Clear Variables")]
     public static void ClearDialogueProgression()
     {
-        string[] varStrings = AssetDatabase.FindAssets("t:floatvariable", new[] { "Assets/SO" });
+        string[] varStrings = AssetDatabase.FindAssets("t:floatvariable", new[] { "Assets/Variables" });
         foreach (string asset in varStrings)
         {
             string path = AssetDatabase.GUIDToAssetPath(asset);

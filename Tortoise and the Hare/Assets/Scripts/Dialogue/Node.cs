@@ -16,9 +16,14 @@ public class Node : ScriptableObject
     public string Dialogue;
 
     [TitleGroup("Extra Settings")]
+    [Space]
+    [PropertyOrder(4)]
+    public float TimeSpent = 2.5f;
+    [Space]
     [PropertyOrder(4)]
     [Range(0, 1)] public float DialogueSpeed = 0.95f;
-    [PropertyOrder(5)]
+    [Space]
+    [PropertyOrder(4)]
     public float FinishDelay = 1f;
 
     [Space(10)]
@@ -29,9 +34,19 @@ public class Node : ScriptableObject
     [HideInInspector]
     public bool Visited;
 
+    FloatVariable time;
+
     public void Visit()
     {
         Visited = true;
+
+        string[] file = AssetDatabase.FindAssets("Time t:floatvariable", new[] { "Assets/Variables" });
+
+        string path = AssetDatabase.GUIDToAssetPath(file[0]);
+
+        time = AssetDatabase.LoadAssetAtPath<FloatVariable>(path);
+
+        time.AddValue(TimeSpent);
 
         foreach (Condition condition in ConditionsToSet)
         {
