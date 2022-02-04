@@ -8,7 +8,6 @@ public class ConversationStarter : MonoBehaviour
     Popup popup;
 
     bool listening;
-    bool speaking;
 
     private void Awake()
     {
@@ -100,7 +99,6 @@ public class ConversationStarter : MonoBehaviour
     //Types out dialogue text based on speed
     IEnumerator TypeDialogue(Node node)
     {
-        speaking = true;
         popup.DialogueTextMesh.SetText(string.Empty);
 
         foreach (char c in node.Dialogue.ToCharArray())
@@ -108,7 +106,6 @@ public class ConversationStarter : MonoBehaviour
             popup.DialogueTextMesh.text += c;
             yield return new WaitForSeconds(1 - node.DialogueSpeed);
         }
-        speaking = false;
 
         StartCoroutine(DialogueDelay(node));
     }
