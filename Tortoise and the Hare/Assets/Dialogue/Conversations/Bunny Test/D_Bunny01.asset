@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 75102dfd00f446141b33af95ea629695, type: 2}
   Dialogue: Hi! Nice to meet you!
+  TimeSpent: 2.5
   DialogueSpeed: 0.95
   FinishDelay: 1
   ConditionsToSet: []

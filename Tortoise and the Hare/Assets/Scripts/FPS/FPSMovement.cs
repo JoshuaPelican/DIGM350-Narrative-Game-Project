@@ -3,17 +3,16 @@ using UnityEngine;
 public class FPSMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] float moveSpeed = 6;
+    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] [Range(0, 1)] float acceleration = 0.75f;
     [SerializeField] float jumpHeight = 0.5f;
 
     [Header("Ground Settings")]
-    [SerializeField] float groundedRadius = 0.25f;
-    [SerializeField] float groundedDistance = 0.65f;
+    [SerializeField] float groundedRadius = 0.05f;
+    [SerializeField] float groundedDistance = 0.5f;
     [SerializeField] LayerMask groundLayer;
 
-    [Header("Testing Settings - Please Remove!")]
-    [SerializeField] Condition hasJumped;
-
+    Collider col;
     Rigidbody rig;
     float gravity = Physics.gravity.y;
     Vector3 velocity;
@@ -22,12 +21,15 @@ public class FPSMovement : MonoBehaviour
     {
         get
         {
-            return Physics.CheckSphere(transform.position + (Vector3.down * groundedDistance), groundedRadius, groundLayer, QueryTriggerInteraction.Ignore);
+            Vector3 extents = col.bounds.extents / 2;
+            extents.y = groundedRadius;
+            return Physics.CheckBox(transform.position + (Vector3.down * groundedDistance), extents, Quaternion.identity ,groundLayer, QueryTriggerInteraction.Ignore);
         }
     }
 
     private void Start()
     {
+        col = GetComponent<Collider>();
         rig = GetComponent<Rigidbody>();
     }
 
@@ -42,6 +44,16 @@ public class FPSMovement : MonoBehaviour
         float horiz = Input.GetAxisRaw("Horizontal");
         float vert = Input.GetAxisRaw("Vertical");
 
+        //If can jump and want to jump
+        if (Input.GetButton("Jump") && IsGrounded)
+        {
+            //Gain velocity proportional to jump height
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        //Apply gravity over time
+        velocity.y += gravity * Time.deltaTime;
+
         //If landed on the ground
         if (IsGrounded && velocity.y < 0)
         {
@@ -49,25 +61,10 @@ public class FPSMovement : MonoBehaviour
             velocity.y = 0;
         }
 
-        //If can jump and want to jump
-        if (Input.GetButton("Jump") && IsGrounded)
-        {
-            //Gain velocity proportional to jump height
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-
-            //Testing
-            hasJumped.Value = true;
-        }
-
-        //Apply gravity over time
-        velocity.y += gravity * Time.deltaTime;
-
         //Calculate movement direction
-        Vector3 move = Vector3.Normalize((transform.right * horiz) + (transform.forward * vert)) + velocity;
-        //Calculate movement speed
-        float speed = moveSpeed;
+        Vector3 move = Vector3.ClampMagnitude((transform.right * horiz) + (transform.forward * vert), 1);
 
         //Apply movement
-        rig.velocity = (move * speed);
+        rig.velocity = Vector3.Lerp(rig.velocity, (move * moveSpeed) + velocity, acceleration);
     }
 }
