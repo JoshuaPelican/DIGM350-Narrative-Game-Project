@@ -18,7 +18,7 @@ public class EventTrigger : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        if (!Conditions.All(x => x.Value == true))
+        if (!Conditions.All(x => x.Value == true) && Conditions.Length > 0)
             return;
 
         eventToTrigger.OnInvoke.Invoke();
