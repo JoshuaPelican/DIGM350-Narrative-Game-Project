@@ -12,7 +12,7 @@ public class TimeOfDay : MonoBehaviour
 
     private void OnEnable()
     {
-        startingTimeOfDay = transform.rotation.x;
+        startingTimeOfDay = transform.eulerAngles.x;
         timeVariable.OnValueChanged += UpdateTimeOfDay;
     }
 

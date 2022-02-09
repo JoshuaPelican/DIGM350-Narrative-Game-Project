@@ -37,6 +37,13 @@ public class ConversationStarter : MonoBehaviour
 
     void EnterConversation()
     {
+        //If there is no conversation setup
+        if (!Conversation)
+        {
+            Debug.LogWarning($"{transform.parent.name} has no Conversation setup in the Conversation Starter!");
+            return;
+        }
+
         listening = true;
 
         //If the conversation has never started yet, play the starting node
@@ -70,6 +77,9 @@ public class ConversationStarter : MonoBehaviour
 
     void ExitConversation()
     {
+        if (!Conversation)
+            return;
+
         listening = false;
 
         //If the dialogue is in progress, and the conversation has not finished, and there is cancel dialogue, then start it.
