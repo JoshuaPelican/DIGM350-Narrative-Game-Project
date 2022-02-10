@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
+  m_Name: D_HLine2
+  m_EditorClassIdentifier: 
+  Speaker: {fileID: 11400000, guid: b66969850225e004fb6b0e68b95ddf4f, type: 2}
+  Dialogue: You must be joking!
+  TimeSpent: 2.5
+  DialogueSpeed: 0.95
+  FinishDelay: 2
+  ConditionsToSet: []
+  EventsToTrigger: []
+  Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
+  nextNode: {fileID: 11400000, guid: a20d18cda40f6544fa598046908ea532, type: 2}
