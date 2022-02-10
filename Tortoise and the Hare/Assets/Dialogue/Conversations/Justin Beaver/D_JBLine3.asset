@@ -17,6 +17,7 @@ MonoBehaviour:
   TimeSpent: 2.5
   DialogueSpeed: 0.95
   FinishDelay: 1
-  ConditionsToSet: []
+  ConditionsToSet:
+  - {fileID: 11400000, guid: bc3de31fa94a17646919628f7436ff63, type: 2}
   Visited: 0
   nextNode: {fileID: 11400000, guid: df96929b4e632794b9003953d1d65e5e, type: 2}

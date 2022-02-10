@@ -50,7 +50,7 @@ public class Node : ScriptableObject
 
         foreach (Condition condition in ConditionsToSet)
         {
-            condition.Value = true;
+            condition.SetValue(true);
         }
     }
 

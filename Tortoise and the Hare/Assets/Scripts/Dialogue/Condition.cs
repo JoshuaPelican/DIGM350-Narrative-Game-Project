@@ -6,6 +6,11 @@ public class Condition : ScriptableObject
 {
     public bool Value;
 
+    public void SetValue(bool value)
+    {
+        Value = value;
+    }
+
     [MenuItem("Dialogue/Reset Conditions")]
     public static void ClearDialogueProgression()
     {
