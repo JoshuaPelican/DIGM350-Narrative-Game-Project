@@ -15,8 +15,8 @@ MonoBehaviour:
   Speaker: {fileID: 11400000, guid: 9b08d219c3dd0444fb7576895d9506fc, type: 2}
   Dialogue: Oh..I'm..trying!
   TimeSpent: 2.5
-  DialogueSpeed: 0.95
+  DialogueSpeed: 0.75
   FinishDelay: 1
   ConditionsToSet: []
-  Visited: 0
+  Visited: 1
   nextNode: {fileID: 11400000, guid: 5b94a6937a3ca30499cbf76c76c0ac6b, type: 2}

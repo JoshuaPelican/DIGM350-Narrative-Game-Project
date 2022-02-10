@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3152597716948307199}
-  - component: {fileID: 5137946974275189176}
+  - component: {fileID: 8878443460099722651}
   - component: {fileID: 4443314246254817085}
   m_Layer: 0
-  m_Name: EventTrigger
+  m_Name: VariableEventTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5137946974275189176
+--- !u!114 &8878443460099722651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8922850471275984819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3d405f77acf8149b0ff16659150959, type: 3}
+  m_Script: {fileID: 11500000, guid: 5efd0aa21cecaac4aac93d8156a57b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Conditions: []
-  eventToTrigger: {fileID: 0}
+  Variable: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
+  LessThanValue: 50
+  eventToTrigger: {fileID: 11400000, guid: 832e665e796510b4ea856ca3217f442d, type: 2}
 --- !u!65 &4443314246254817085
 BoxCollider:
   m_ObjectHideFlags: 0
