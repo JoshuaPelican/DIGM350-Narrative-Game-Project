@@ -11,19 +11,26 @@ public class VariableEventTrigger : MonoBehaviour
     [SerializeField] float LessThanValue;
     [Space]
     [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
-    [SerializeField] EventVariable eventToTrigger;
+    [SerializeField] EventVariable TrueEvent;
+    [Space]
+    [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
+    [SerializeField] EventVariable FalseEvent;
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
             return;
 
-        if (!(Variable.Value < LessThanValue))
-            return;
+        if (Variable.Value < LessThanValue)
+        {
+            TrueEvent?.Invoke();
+        }
+        else
+        {
+            FalseEvent?.Invoke();
+        }
 
-        eventToTrigger.OnInvoke.Invoke();
-
-        Destroy(gameObject);
+        GetComponent<Collider>().enabled = false;
     }
 
     static IEnumerable GetAllEvents()

@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: Man, everyone really does know. Is a shortcut even allowed?
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: 48501e3883aa5b745ad5fd967bcf2662, type: 2}

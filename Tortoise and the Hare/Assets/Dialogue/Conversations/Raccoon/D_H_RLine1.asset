@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: No big deal. I'll help you pick it up.
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: cb41fb0dfadce444492f05510e2613cf, type: 2}

@@ -11,19 +11,26 @@ public class ConditionEventTrigger : MonoBehaviour
     [SerializeField] Condition[] Conditions;
     [Space]
     [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
-    [SerializeField] EventVariable eventToTrigger;
+    [SerializeField] EventVariable TrueEvent;
+    [Space]
+    [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
+    [SerializeField] EventVariable FalseEvent;
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
             return;
 
-        if (!Conditions.All(x => x.Value == true) && Conditions.Length > 0)
-            return;
-
-        eventToTrigger.OnInvoke.Invoke();
-
-        Destroy(gameObject);
+        if (Conditions.All(x => x.Value == true) || Conditions.Length == 0)
+        {
+            TrueEvent?.Invoke();
+        }
+        else
+        {
+            FalseEvent?.Invoke();
+        }
+        
+        GetComponent<Collider>().enabled = false;
     }
 
     static IEnumerable GetAllConditions()

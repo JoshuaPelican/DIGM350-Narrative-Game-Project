@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: Well, I suppose congratulations are in order.
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: f934ccff8ce444d47b1e6c1fc6843567, type: 2}

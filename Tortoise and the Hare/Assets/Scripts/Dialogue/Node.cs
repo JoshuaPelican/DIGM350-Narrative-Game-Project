@@ -31,6 +31,10 @@ public class Node : ScriptableObject
     [ValueDropdown("GetAllConditions", FlattenTreeView = true, DropdownTitle = "Select A Condition")]
     public Condition[] ConditionsToSet;
 
+    [PropertyOrder(7)]
+    [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
+    public EventVariable[] EventsToTrigger;
+
     [HideInInspector]
     public bool Visited;
 
@@ -52,6 +56,11 @@ public class Node : ScriptableObject
         {
             condition.SetValue(true);
         }
+
+        foreach (EventVariable eventVar in EventsToTrigger)
+        {
+            eventVar.Invoke();
+        }
     }
 
     public virtual Node NextNode()
@@ -64,5 +73,12 @@ public class Node : ScriptableObject
         return AssetDatabase.FindAssets("t:condition", new[] { "Assets/Dialogue" })
             .Select(x => AssetDatabase.GUIDToAssetPath(x))
             .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<Condition>(x).name, AssetDatabase.LoadAssetAtPath<Condition>(x)));
+    }
+
+    static IEnumerable GetAllEvents()
+    {
+        return AssetDatabase.FindAssets("t:eventvariable", new[] { "Assets/Variables" })
+            .Select(x => AssetDatabase.GUIDToAssetPath(x))
+            .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<EventVariable>(x).name, AssetDatabase.LoadAssetAtPath<EventVariable>(x)));
     }
 }

@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: How do you get anywhere going that slow?
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: db5021f4c9734cd4c90ae7b64fa0edbd, type: 2}

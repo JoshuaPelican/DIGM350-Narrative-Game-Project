@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: Thanks! Take..these..running..shoes!
   TimeSpent: 2.5
   DialogueSpeed: 0.75
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 1
   nextNode: {fileID: 11400000, guid: 52000cc74a4102040955d0d8bb06e387, type: 2}

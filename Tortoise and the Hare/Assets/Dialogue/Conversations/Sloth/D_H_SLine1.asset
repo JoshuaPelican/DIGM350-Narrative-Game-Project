@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: You ought to get out of the middle of the road.
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: ba07305e660965046ba71aad8f3f88a6, type: 2}

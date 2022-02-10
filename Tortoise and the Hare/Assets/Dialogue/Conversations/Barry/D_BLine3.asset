@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: How do you think Tortoise always beats everyone?
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: 1e5e731155a2e0949a8736c937008fad, type: 2}

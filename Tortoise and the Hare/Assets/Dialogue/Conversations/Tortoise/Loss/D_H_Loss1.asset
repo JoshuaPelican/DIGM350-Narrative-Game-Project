@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: Huh? But you beat me. I lost!
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: b246f0c000c1496439da19024840d5dd, type: 2}

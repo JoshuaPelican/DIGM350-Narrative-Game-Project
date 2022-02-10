@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: Oh man, oh man... I'm always dropping stuff!
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 1
   nextNode: {fileID: 11400000, guid: 8aa85f47d678c0240ac313ddeef1ce16, type: 2}

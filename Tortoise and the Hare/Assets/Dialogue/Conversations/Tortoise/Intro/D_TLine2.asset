@@ -16,7 +16,8 @@ MonoBehaviour:
   Dialogue: You really ought to slow down once in a while.
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
   nextNode: {fileID: 11400000, guid: 4230b7fb6e315164c9e86b877d425496, type: 2}
