@@ -11,6 +11,8 @@ public class Condition : ScriptableObject
         Value = value;
     }
 
+#if UNITY_EDITOR
+
     [MenuItem("Dialogue/Reset Conditions")]
     public static void ClearDialogueProgression()
     {
@@ -23,4 +25,7 @@ public class Condition : ScriptableObject
 
         Debug.Log($"{conditionStrings.Length} Conditions had their Value reset!");
     }
+
+#endif
+
 }

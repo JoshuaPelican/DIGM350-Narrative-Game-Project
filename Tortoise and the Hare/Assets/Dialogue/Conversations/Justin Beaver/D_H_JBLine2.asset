@@ -20,4 +20,5 @@ MonoBehaviour:
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 1
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: 682056920d10e854e875e559351ee056, type: 2}

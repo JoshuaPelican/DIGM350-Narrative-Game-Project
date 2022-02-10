@@ -33,10 +33,15 @@ public class VariableEventTrigger : MonoBehaviour
         GetComponent<Collider>().enabled = false;
     }
 
+#if UNITY_EDITOR
+
     static IEnumerable GetAllEvents()
     {
         return AssetDatabase.FindAssets("t:eventvariable", new[] { "Assets/Variables" })
             .Select(x => AssetDatabase.GUIDToAssetPath(x))
             .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<EventVariable>(x).name, AssetDatabase.LoadAssetAtPath<EventVariable>(x)));
     }
+
+#endif
+
 }

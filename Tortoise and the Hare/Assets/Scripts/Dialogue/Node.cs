@@ -38,17 +38,11 @@ public class Node : ScriptableObject
     [HideInInspector]
     public bool Visited;
 
-    FloatVariable time;
+    [SerializeField] FloatVariable time;
 
     public void Visit()
     {
         Visited = true;
-
-        string[] file = AssetDatabase.FindAssets("Time t:floatvariable", new[] { "Assets/Variables" });
-
-        string path = AssetDatabase.GUIDToAssetPath(file[0]);
-
-        time = AssetDatabase.LoadAssetAtPath<FloatVariable>(path);
 
         time.AddValue(TimeSpent);
 
@@ -68,6 +62,8 @@ public class Node : ScriptableObject
         return null;
     }
 
+#if UNITY_EDITOR
+
     static IEnumerable GetAllConditions()
     {
         return AssetDatabase.FindAssets("t:condition", new[] { "Assets/Dialogue" })
@@ -81,4 +77,7 @@ public class Node : ScriptableObject
             .Select(x => AssetDatabase.GUIDToAssetPath(x))
             .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<EventVariable>(x).name, AssetDatabase.LoadAssetAtPath<EventVariable>(x)));
     }
+
+#endif
+
 }

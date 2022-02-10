@@ -21,4 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc3de31fa94a17646919628f7436ff63, type: 2}
   EventsToTrigger: []
   Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: df96929b4e632794b9003953d1d65e5e, type: 2}

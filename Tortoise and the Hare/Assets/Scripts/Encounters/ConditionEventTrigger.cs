@@ -33,6 +33,8 @@ public class ConditionEventTrigger : MonoBehaviour
         GetComponent<Collider>().enabled = false;
     }
 
+#if UNITY_EDITOR
+
     static IEnumerable GetAllConditions()
     {
         return AssetDatabase.FindAssets("t:condition", new[] { "Assets/Dialogue" })
@@ -46,4 +48,7 @@ public class ConditionEventTrigger : MonoBehaviour
             .Select(x => AssetDatabase.GUIDToAssetPath(x))
             .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<EventVariable>(x).name, AssetDatabase.LoadAssetAtPath<EventVariable>(x)));
     }
+
+#endif
+
 }

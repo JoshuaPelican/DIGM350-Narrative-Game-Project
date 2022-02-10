@@ -20,6 +20,8 @@ public class FloatVariable : ScriptableObject
         Value = 0;
     }
 
+#if UNITY_EDITOR
+
     [MenuItem("SO/Clear Variables")]
     public static void ClearDialogueProgression()
     {
@@ -32,4 +34,7 @@ public class FloatVariable : ScriptableObject
 
         Debug.Log($"{varStrings.Length} Variables had their Value cleared!");
     }
+
+#endif
+
 }
