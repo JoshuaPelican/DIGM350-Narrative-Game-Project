@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3699047545941449292}
   - component: {fileID: 358726321172501993}
   - component: {fileID: 2530606248479498531}
-  - component: {fileID: 7470183842178628978}
+  - component: {fileID: 2355318079606034136}
   m_Layer: 0
   m_Name: Banner
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7470183842178628978
+--- !u!64 &2355318079606034136
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
