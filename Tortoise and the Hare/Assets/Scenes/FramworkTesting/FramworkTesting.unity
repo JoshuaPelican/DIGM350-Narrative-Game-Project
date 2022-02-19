@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.22328235, g: 0.59546316, b: 0.36582583, a: 1}
+  m_IndirectSpecularColor: {r: 0.10547689, g: 0.24382515, b: 0.3627939, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 4278216879597271921, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: Conversation
       value: 
-      objectReference: {fileID: 11400000, guid: 21b61733331e34c499cdf59d218fc068, type: 2}
+      objectReference: {fileID: 11400000, guid: 9a8c21cc82e560a459b69a0085a48eda, type: 2}
     - target: {fileID: 4278216879597271935, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: m_Name
       value: Conversation Starter

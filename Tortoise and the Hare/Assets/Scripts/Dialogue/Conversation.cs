@@ -13,7 +13,9 @@ public class Conversation : ScriptableObject
     public Node ReturningNode;
     public Node FinishedNode;
     [Space(10)]
+    [SerializeField]
     public bool Started;
+    [SerializeField]
     public bool Finished;
 
     //Retrieves the next node in the conversation

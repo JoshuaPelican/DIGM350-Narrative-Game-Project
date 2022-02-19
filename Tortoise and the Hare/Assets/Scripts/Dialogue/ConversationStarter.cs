@@ -5,13 +5,22 @@ public class ConversationStarter : MonoBehaviour
 {
     [SerializeField] Conversation Conversation;
 
-    Popup popup;
+    Popup playerPopup;
+    Popup otherPopup;
 
     bool listening;
+    bool speaking;
+    Node currentNode;
 
     private void Awake()
     {
-        popup = GetComponentInChildren<Popup>();
+        otherPopup = GetComponentInChildren<Popup>();
+        playerPopup = GameObject.FindWithTag("Player Popup").GetComponent<Popup>();
+    }
+
+    private void Update()
+    {
+        PlayerInput();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +41,22 @@ public class ConversationStarter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ExitConversation();
+        }
+    }
+
+    void PlayerInput()
+    {
+        //If Listening and the mouse is pressed
+        if (Input.GetMouseButtonDown(0) && listening)
+        {
+            //If the dialogue is in progress, finish it
+            if (speaking)
+                FinishTypeDialogue(currentNode);
+            else if (!currentNode)
+                EnterConversation();
+            //Otherwise move on to the next node
+            else
+                EndNode();
         }
     }
 
@@ -87,6 +112,10 @@ public class ConversationStarter : MonoBehaviour
         {
             StartNode(Conversation.CancelledNode);
         }
+        else
+        {
+            EndConversation();
+        }
     }
 
     void StartNode(Node node)
@@ -96,7 +125,8 @@ public class ConversationStarter : MonoBehaviour
         //If node exists.
         if (node)
         {
-            popup.DisplayPopup(node);
+            currentNode = node;
+            CharacterPopup(node).DisplayPopup(node);
             StartCoroutine(TypeDialogue(node));
         }
         //Node is null, remove the popup.
@@ -109,40 +139,51 @@ public class ConversationStarter : MonoBehaviour
     //Types out dialogue text based on speed
     IEnumerator TypeDialogue(Node node)
     {
-        popup.DialogueTextMesh.SetText(string.Empty);
+        speaking = true;
+
+        CharacterPopup(node).DialogueTextMesh.SetText(string.Empty);
 
         foreach (char c in node.Dialogue.ToCharArray())
         {
-            popup.DialogueTextMesh.text += c;
+            CharacterPopup(node).DialogueTextMesh.text += c;
             yield return new WaitForSeconds(1 - node.DialogueSpeed);
         }
 
-        StartCoroutine(DialogueDelay(node));
+        speaking = false;
     }
 
-    //Wait for full delay based on node's delay
-    //Declares a node to be finished
-    IEnumerator DialogueDelay(Node node)
+    //Completely type out dialogue in one frame
+    void FinishTypeDialogue(Node node)
     {
-        node.Visit();
-        yield return new WaitForSeconds(node.FinishDelay);
-        EndNode();
+        speaking = false;
+        StopAllCoroutines();
+        CharacterPopup(node).DialogueTextMesh.SetText(node.Dialogue);
     }
 
     //When a node is complete, if player still listening, move to next node
     //Otherwise player is gone, end conversation
     void EndNode()
     {
+        currentNode.Visit();
+        CharacterPopup(currentNode).RemovePopup();
+        currentNode = null;
+
         if (listening)
             StartNode(Conversation.NextNode());
-        else
-            EndConversation();
     }
 
     //Stops all dialogue and removes popup
     void EndConversation()
     {
         StopAllCoroutines();
-        popup.RemovePopup();
+        otherPopup.RemovePopup();
+        playerPopup.RemovePopup();
+    }
+
+    Popup CharacterPopup(Node node)
+    {
+        if(node.Speaker.name == "Hare")
+            return playerPopup;
+        return otherPopup;
     }
 }

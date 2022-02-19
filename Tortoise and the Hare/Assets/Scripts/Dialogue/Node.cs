@@ -18,13 +18,10 @@ public class Node : ScriptableObject
     [TitleGroup("Extra Settings")]
     [Space]
     [PropertyOrder(4)]
-    public float TimeSpent = 2.5f;
+    float timeSpent = 2.5f;
     [Space]
     [PropertyOrder(4)]
     [Range(0, 1)] public float DialogueSpeed = 0.95f;
-    [Space]
-    [PropertyOrder(4)]
-    public float FinishDelay = 1f;
 
     [Space(10)]
     [PropertyOrder(6)]
@@ -44,7 +41,7 @@ public class Node : ScriptableObject
     {
         Visited = true;
 
-        time.AddValue(TimeSpent);
+        time.AddValue(timeSpent);
 
         foreach (Condition condition in ConditionsToSet)
         {
