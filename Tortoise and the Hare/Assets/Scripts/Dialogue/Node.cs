@@ -31,26 +31,29 @@ public class Node : ScriptableObject
     [ValueDropdown("GetAllConditions", FlattenTreeView = true, DropdownTitle = "Select A Condition")]
     public Condition[] ConditionsToSet;
 
+    [PropertyOrder(7)]
+    [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
+    public EventVariable[] EventsToTrigger;
+
     [HideInInspector]
     public bool Visited;
 
-    FloatVariable time;
+    [SerializeField] FloatVariable time;
 
     public void Visit()
     {
         Visited = true;
-
-        string[] file = AssetDatabase.FindAssets("Time t:floatvariable", new[] { "Assets/Variables" });
-
-        string path = AssetDatabase.GUIDToAssetPath(file[0]);
-
-        time = AssetDatabase.LoadAssetAtPath<FloatVariable>(path);
 
         time.AddValue(TimeSpent);
 
         foreach (Condition condition in ConditionsToSet)
         {
             condition.SetValue(true);
+        }
+
+        foreach (EventVariable eventVar in EventsToTrigger)
+        {
+            eventVar.Invoke();
         }
     }
 
@@ -59,10 +62,22 @@ public class Node : ScriptableObject
         return null;
     }
 
+#if UNITY_EDITOR
+
     static IEnumerable GetAllConditions()
     {
         return AssetDatabase.FindAssets("t:condition", new[] { "Assets/Dialogue" })
             .Select(x => AssetDatabase.GUIDToAssetPath(x))
             .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<Condition>(x).name, AssetDatabase.LoadAssetAtPath<Condition>(x)));
     }
+
+    static IEnumerable GetAllEvents()
+    {
+        return AssetDatabase.FindAssets("t:eventvariable", new[] { "Assets/Variables" })
+            .Select(x => AssetDatabase.GUIDToAssetPath(x))
+            .Select(x => new ValueDropdownItem(AssetDatabase.LoadAssetAtPath<EventVariable>(x).name, AssetDatabase.LoadAssetAtPath<EventVariable>(x)));
+    }
+
+#endif
+
 }

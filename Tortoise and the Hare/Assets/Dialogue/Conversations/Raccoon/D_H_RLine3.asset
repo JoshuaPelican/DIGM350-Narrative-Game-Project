@@ -16,7 +16,9 @@ MonoBehaviour:
   Dialogue: He has? How?!
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: 0ba75eab176da17488f96bae17ea5869, type: 2}

@@ -16,7 +16,10 @@ MonoBehaviour:
   Dialogue: Seriously? Ugh, then yes, please!
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger:
+  - {fileID: 11400000, guid: 4473e02a56c02314e83dbaff71389dfc, type: 2}
   Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 0}

@@ -16,7 +16,9 @@ MonoBehaviour:
   Dialogue: Thanks! Are you racing Tortoise?
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: f27fb3d8791609643867dc58710d6508, type: 2}

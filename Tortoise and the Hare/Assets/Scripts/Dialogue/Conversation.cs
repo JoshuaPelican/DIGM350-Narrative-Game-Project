@@ -32,6 +32,7 @@ public class Conversation : ScriptableObject
         return nextNode;
     }
 
+#if UNITY_EDITOR
 
     [MenuItem("Dialogue/Clear Dialogue Progression")]
     public static void ClearDialogueProgression()
@@ -56,4 +57,7 @@ public class Conversation : ScriptableObject
 
         Debug.Log($"{convoStrings.Length} Conversations had their progression cleared!");
     }
+
+#endif
+
 }

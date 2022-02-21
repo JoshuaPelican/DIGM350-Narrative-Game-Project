@@ -16,7 +16,9 @@ MonoBehaviour:
   Dialogue: Oh..I'm..trying!
   TimeSpent: 2.5
   DialogueSpeed: 0.75
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 1
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: 5b94a6937a3ca30499cbf76c76c0ac6b, type: 2}

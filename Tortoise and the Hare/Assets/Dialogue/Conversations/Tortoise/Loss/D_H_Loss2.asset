@@ -16,7 +16,9 @@ MonoBehaviour:
   Dialogue: Why does that matter?
   TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 1
+  FinishDelay: 2
   ConditionsToSet: []
+  EventsToTrigger: []
   Visited: 0
+  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
   nextNode: {fileID: 11400000, guid: cd2344a748b05f949883c4d5133ef7ac, type: 2}

@@ -5,4 +5,9 @@ using UnityEngine.Events;
 public class EventVariable : ScriptableObject
 {
     public UnityAction OnInvoke;
+
+    public void Invoke()
+    {
+        OnInvoke.Invoke();
+    }
 }
