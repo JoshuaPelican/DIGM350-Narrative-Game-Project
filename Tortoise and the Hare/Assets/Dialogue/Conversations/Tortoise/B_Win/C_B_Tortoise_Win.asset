@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ab02eb09286a44c8359ed9bd5641c0, type: 3}
   m_Name: C_B_Tortoise_Win
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 11400000, guid: 897247bb7992c23408d83f14ad62d565, type: 2}
-  StartingNode: {fileID: 11400000, guid: 258d908f253c6584cb06b878fcc856d9, type: 2}
+  StartingNode: {fileID: 11400000, guid: 98881102fe094054e9bce1d850b66ed6, type: 2}
   CancelledNode: {fileID: 0}
   ReturningNode: {fileID: 0}
   FinishedNode: {fileID: 0}
-  Started: 0
-  Finished: 0
+  Started: 1
+  Finished: 1

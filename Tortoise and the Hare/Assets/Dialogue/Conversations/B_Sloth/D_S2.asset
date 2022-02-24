@@ -15,8 +15,8 @@ MonoBehaviour:
   Speaker: {fileID: 11400000, guid: 9b08d219c3dd0444fb7576895d9506fc, type: 2}
   Dialogue: I'll give you something helpful, just help me back into my tree!
   DialogueSpeed: 0.805
-  ConditionsToSet: []
+  ConditionsToSet:
+  - {fileID: 11400000, guid: 29704e1516ab08349a7f74a2ae08af54, type: 2}
   EventsToTrigger: []
   Visited: 0
-  time: {fileID: 0}
   nextNode: {fileID: 0}

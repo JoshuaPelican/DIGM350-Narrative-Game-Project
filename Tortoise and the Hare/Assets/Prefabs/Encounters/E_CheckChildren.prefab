@@ -50,6 +50,7 @@ MonoBehaviour:
   LessThanValue: 3
   TrueEvent: {fileID: 0}
   FalseEvent: {fileID: 11400000, guid: b2874d3ef8f83494ea33b1db2dafba67, type: 2}
+  DisableAfterTrigger: 0
 --- !u!65 &3599027924096084057
 BoxCollider:
   m_ObjectHideFlags: 0

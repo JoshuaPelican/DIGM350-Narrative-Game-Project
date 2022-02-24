@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
   m_Name: D_RF2
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 0}
-  Dialogue: 
-  DialogueSpeed: 0.95
-  ConditionsToSet: []
+  Speaker: {fileID: 11400000, guid: a716dd685885c764d85dae56b8a22351, type: 2}
+  Dialogue: Oh thank you dear! My babies have been brought back to me again!
+  DialogueSpeed: 0.9
+  ConditionsToSet:
+  - {fileID: 11400000, guid: 5dbd4f8dc9bc94d44ad95a5ae4f82eb2, type: 2}
   EventsToTrigger: []
   Visited: 0
-  time: {fileID: 0}
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 9e22d89341504fc439da4ed08e028742, type: 2}
