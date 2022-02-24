@@ -15,9 +15,8 @@ MonoBehaviour:
   Speaker: {fileID: 11400000, guid: a716dd685885c764d85dae56b8a22351, type: 2}
   Dialogue: Oh! Yes! What a good idea. Can you help me look for them? There's 3...
     hopefully.
-  DialogueSpeed: 0.95
+  DialogueSpeed: 0.9
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 0
-  time: {fileID: 0}
   nextNode: {fileID: 0}

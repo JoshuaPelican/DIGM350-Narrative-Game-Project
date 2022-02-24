@@ -140,12 +140,16 @@ PrefabInstance:
       value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 5137946974275189176, guid: 69c49eff2c37c644a8a9472e1d6e6240, type: 3}
+      propertyPath: TrueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ec74f7a69e3f29947982f67b66604ba9, type: 2}
+    - target: {fileID: 5137946974275189176, guid: 69c49eff2c37c644a8a9472e1d6e6240, type: 3}
       propertyPath: eventToTrigger
       value: 
       objectReference: {fileID: 11400000, guid: ec74f7a69e3f29947982f67b66604ba9, type: 2}
     - target: {fileID: 5137946974275189176, guid: 69c49eff2c37c644a8a9472e1d6e6240, type: 3}
       propertyPath: Conditions.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137946974275189176, guid: 69c49eff2c37c644a8a9472e1d6e6240, type: 3}
       propertyPath: Conditions.Array.data[0]

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6243895972834406436}
-  - component: {fileID: 454883270501495104}
+  - component: {fileID: 281211037934665639}
   - component: {fileID: 4670041937524511718}
   - component: {fileID: 9036051152233315549}
   m_Layer: 0
@@ -28,13 +28,13 @@ Transform:
   m_GameObject: {fileID: 482682991801584488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.6930002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &454883270501495104
+--- !u!114 &281211037934665639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,12 +43,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 482682991801584488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5efd0aa21cecaac4aac93d8156a57b76, type: 3}
+  m_Script: {fileID: 11500000, guid: ad3d405f77acf8149b0ff16659150959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variable: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
-  LessThanValue: 50
-  eventToTrigger: {fileID: 11400000, guid: 832e665e796510b4ea856ca3217f442d, type: 2}
+  Conditions:
+  - {fileID: 11400000, guid: 5dbd4f8dc9bc94d44ad95a5ae4f82eb2, type: 2}
+  - {fileID: 11400000, guid: 29704e1516ab08349a7f74a2ae08af54, type: 2}
+  TrueEvent: {fileID: 11400000, guid: 69be07b3d2238c342b374575ab8862a0, type: 2}
+  FalseEvent: {fileID: 11400000, guid: 832e665e796510b4ea856ca3217f442d, type: 2}
 --- !u!65 &4670041937524511718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60,7 +62,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 10, y: 10, z: 49.09}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9036051152233315549
 MonoBehaviour:

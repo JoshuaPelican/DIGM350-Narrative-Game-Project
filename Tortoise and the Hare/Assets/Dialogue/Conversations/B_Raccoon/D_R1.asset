@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: a716dd685885c764d85dae56b8a22351, type: 2}
   Dialogue: Oh dear, oh dear... It seems I've lost my babies again!
-  DialogueSpeed: 0.95
+  DialogueSpeed: 0.9
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 0
-  time: {fileID: 0}
   nextNode: {fileID: 11400000, guid: 2007b218bf6d0d941b02cbecf0b113d9, type: 2}

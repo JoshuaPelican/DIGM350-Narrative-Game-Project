@@ -16,6 +16,8 @@ public class VariableEventTrigger : MonoBehaviour
     [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
     [SerializeField] EventVariable FalseEvent;
 
+    [SerializeField] bool DisableAfterTrigger;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
@@ -30,7 +32,7 @@ public class VariableEventTrigger : MonoBehaviour
             FalseEvent?.Invoke();
         }
 
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = !DisableAfterTrigger;
     }
 
 #if UNITY_EDITOR

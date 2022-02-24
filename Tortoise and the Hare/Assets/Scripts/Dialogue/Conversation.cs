@@ -4,9 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "C_NewConvo", menuName = "Dialogue/Conversation")]
 public class Conversation : ScriptableObject
 {
-    [Header("Conversation Speaker")]
-    public Character Speaker;
-
     [Header("Conversation Nodes")]
     public Node StartingNode;
     public Node CancelledNode;
@@ -22,7 +19,7 @@ public class Conversation : ScriptableObject
     //Returns null if there is no non-visited nodes left
     public Node NextNode()
     {
-        Node nextNode = StartingNode;
+        Node nextNode = Finished ? FinishedNode : StartingNode;
         int i = 0;
 
         while (nextNode != null && nextNode?.Visited == true && i <= 50)

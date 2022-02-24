@@ -18,9 +18,6 @@ public class Node : ScriptableObject
     [TitleGroup("Extra Settings")]
     [Space]
     [PropertyOrder(4)]
-    float timeSpent = 2.5f;
-    [Space]
-    [PropertyOrder(4)]
     [Range(0, 1)] public float DialogueSpeed = 0.95f;
 
     [Space(10)]
@@ -35,13 +32,9 @@ public class Node : ScriptableObject
     [HideInInspector]
     public bool Visited;
 
-    [SerializeField] FloatVariable time;
-
     public void Visit()
     {
         Visited = true;
-
-        time.AddValue(timeSpent);
 
         foreach (Condition condition in ConditionsToSet)
         {
