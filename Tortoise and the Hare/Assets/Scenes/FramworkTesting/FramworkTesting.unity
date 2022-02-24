@@ -1856,7 +1856,7 @@ PrefabInstance:
     - target: {fileID: 4278216879597271921, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: Conversation
       value: 
-      objectReference: {fileID: 11400000, guid: 9a8c21cc82e560a459b69a0085a48eda, type: 2}
+      objectReference: {fileID: 11400000, guid: 92f1b16a7c8980e4a9f20219d501c768, type: 2}
     - target: {fileID: 4278216879597271935, guid: a8548fe143444dd49a95cb2673143105, type: 3}
       propertyPath: m_Name
       value: Conversation Starter
