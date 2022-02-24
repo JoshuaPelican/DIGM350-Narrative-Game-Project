@@ -19,4 +19,4 @@ MonoBehaviour:
   EventsToTrigger: []
   Visited: 0
   time: {fileID: 0}
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 8d42455d9286e814cb427ec86a106825, type: 2}

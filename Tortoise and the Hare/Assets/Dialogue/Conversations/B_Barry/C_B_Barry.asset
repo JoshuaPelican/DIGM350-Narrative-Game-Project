@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ab02eb09286a44c8359ed9bd5641c0, type: 3}
   m_Name: C_B_Barry
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 0}
-  StartingNode: {fileID: 0}
+  Speaker: {fileID: 11400000, guid: aee48008046ee894d9c4eefbf577b680, type: 2}
+  StartingNode: {fileID: 11400000, guid: 695e0abbe3e830f4fbaa57b73ca33caa, type: 2}
   CancelledNode: {fileID: 0}
   ReturningNode: {fileID: 0}
   FinishedNode: {fileID: 0}

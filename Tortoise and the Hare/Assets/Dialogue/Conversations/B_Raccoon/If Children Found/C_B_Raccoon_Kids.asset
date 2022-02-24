@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ab02eb09286a44c8359ed9bd5641c0, type: 3}
   m_Name: C_B_Raccoon_Kids
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 0}
-  StartingNode: {fileID: 0}
+  Speaker: {fileID: 11400000, guid: a716dd685885c764d85dae56b8a22351, type: 2}
+  StartingNode: {fileID: 11400000, guid: bafdc294fae4b80408e83d3c99530219, type: 2}
   CancelledNode: {fileID: 0}
   ReturningNode: {fileID: 0}
   FinishedNode: {fileID: 0}

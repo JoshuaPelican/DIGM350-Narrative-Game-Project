@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
   m_Name: D_B1
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 0}
-  Dialogue: 
+  Speaker: {fileID: 11400000, guid: aee48008046ee894d9c4eefbf577b680, type: 2}
+  Dialogue: Sure am. What can I do for ya?
   DialogueSpeed: 0.95
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 0
   time: {fileID: 0}
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 9454b8485772d10428bc9f3c71e9ee6e, type: 2}

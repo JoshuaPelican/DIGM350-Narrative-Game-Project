@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d3b79599148de4288dbff2b2a10017, type: 3}
   m_Name: D_BH2
   m_EditorClassIdentifier: 
-  Speaker: {fileID: 0}
-  Dialogue: 
+  Speaker: {fileID: 11400000, guid: b66969850225e004fb6b0e68b95ddf4f, type: 2}
+  Dialogue: Your nephew asked me to look for you while I'm running this race.
   DialogueSpeed: 0.95
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 0
   time: {fileID: 0}
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 3a184becdd657b34090cccf814c7346a, type: 2}
