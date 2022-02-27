@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: D_RHF1
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: b66969850225e004fb6b0e68b95ddf4f, type: 2}
-  Dialogue: 'Uh, yup. Try to keep track of them. '
+  Dialogue: Uh, yup. Try to keep track of them this time.
   DialogueSpeed: 0.95
-  ConditionsToSet: []
+  ConditionsToSet:
+  - {fileID: 11400000, guid: 29704e1516ab08349a7f74a2ae08af54, type: 2}
   EventsToTrigger: []
-  Visited: 0
-  time: {fileID: 0}
-  nextNode: {fileID: 11400000, guid: 133b3351b8efcf44093e97acac3ba4ec, type: 2}
+  Visited: 1
+  nextNode: {fileID: 11400000, guid: 8968a01f4fbce98468278743fc11298a, type: 2}

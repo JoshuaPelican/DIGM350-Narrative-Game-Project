@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: D_RF2
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: a716dd685885c764d85dae56b8a22351, type: 2}
-  Dialogue: Thank you!
+  Dialogue: Thanks for everything, dear.
   DialogueSpeed: 0.95
   ConditionsToSet: []
   EventsToTrigger: []
   Visited: 0
-  time: {fileID: 0}
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 9e22d89341504fc439da4ed08e028742, type: 2}

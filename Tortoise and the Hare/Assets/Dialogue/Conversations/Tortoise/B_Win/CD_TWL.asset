@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CD_TWL
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: 897247bb7992c23408d83f14ad62d565, type: 2}
-  Dialogue: Well you got to the end.
+  Dialogue: Well you made it.
   DialogueSpeed: 0.95
   ConditionsToSet: []
   EventsToTrigger: []

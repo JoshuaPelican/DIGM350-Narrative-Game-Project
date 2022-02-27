@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D_RHNF1
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: b66969850225e004fb6b0e68b95ddf4f, type: 2}
-  Dialogue: Not yet, but I will keep searching!
+  Dialogue: No, not yet.
   DialogueSpeed: 0.95
   ConditionsToSet: []
   EventsToTrigger: []
