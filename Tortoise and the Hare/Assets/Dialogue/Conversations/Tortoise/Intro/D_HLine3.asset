@@ -14,11 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speaker: {fileID: 11400000, guid: b66969850225e004fb6b0e68b95ddf4f, type: 2}
   Dialogue: Alright, let's have a race then. Try not to get too embarrassed!
-  TimeSpent: 2.5
   DialogueSpeed: 0.95
-  FinishDelay: 2
   ConditionsToSet: []
-  EventsToTrigger: []
-  Visited: 0
-  time: {fileID: 11400000, guid: d3dc777b7f1332b42a75c29d2a9ebdfd, type: 2}
+  EventsToTrigger:
+  - {fileID: 11400000, guid: 7436ca84376a7c942b57bc55c97b6cda, type: 2}
+  Visited: 1
   nextNode: {fileID: 0}

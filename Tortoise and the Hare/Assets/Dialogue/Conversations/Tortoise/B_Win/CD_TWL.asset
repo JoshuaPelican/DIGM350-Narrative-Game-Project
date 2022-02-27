@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0103de2ebe0a61e46afc23646151f29b, type: 3}
+  m_Name: CD_TWL
+  m_EditorClassIdentifier: 
+  Speaker: {fileID: 11400000, guid: 897247bb7992c23408d83f14ad62d565, type: 2}
+  Dialogue: Well you made it.
+  DialogueSpeed: 0.95
+  ConditionsToSet: []
+  EventsToTrigger: []
+  Visited: 0
+  condition: {fileID: 11400000, guid: d72b79ad3f03f7b4388d17cbeedef9bc, type: 2}
+  TrueNode: {fileID: 11400000, guid: 258d908f253c6584cb06b878fcc856d9, type: 2}
+  FalseNode: {fileID: 11400000, guid: d6d3a47a95d855e4f859faf1e214d183, type: 2}
