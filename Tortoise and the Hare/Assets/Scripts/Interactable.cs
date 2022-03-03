@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] bool RemoveOnInteract = true;
     public UnityEvent OnInteract;
 
-    public void Pickup()
+    public void Interact()
     {
         OnInteract?.Invoke();
         gameObject.SetActive(!RemoveOnInteract);

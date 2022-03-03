@@ -37,6 +37,6 @@ public class FPSInteract : MonoBehaviour
         if (!clickHit.transform.TryGetComponent(out Interactable interactable))
             return;
 
-        interactable.Pickup();
+        interactable.Interact();
     }
 }
