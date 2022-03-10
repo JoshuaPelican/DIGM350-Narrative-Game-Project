@@ -16,6 +16,7 @@ MonoBehaviour:
   Dialogue: One bridge coming right up!
   DialogueSpeed: 0.95
   ConditionsToSet: []
-  EventsToTrigger: []
+  EventsToTrigger:
+  - {fileID: 11400000, guid: dcec10526a589af4ab7d7fcf6d29516d, type: 2}
   Visited: 0
   nextNode: {fileID: 0}

@@ -54,7 +54,7 @@ Material:
     - _Normal_Strength: 0.1
     - _Ocean_Scale: 1000
     - _Ocean_Speed: 0.003
-    - _Ocean_Strength: 2
+    - _Ocean_Strength: 1
     - _Ocean_Warp_Speed: 1
     - _QueueControl: 0
     - _QueueOffset: 0

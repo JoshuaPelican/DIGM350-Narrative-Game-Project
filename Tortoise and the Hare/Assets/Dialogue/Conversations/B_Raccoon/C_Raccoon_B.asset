@@ -15,6 +15,6 @@ MonoBehaviour:
   StartingNode: {fileID: 11400000, guid: 2f589ac66b26a754ab65e3e1b9bcdb13, type: 2}
   CancelledNode: {fileID: 0}
   ReturningNode: {fileID: 0}
-  FinishedNode: {fileID: 11400000, guid: 58cf05837cfc5cc47a6fd34484c2ce26, type: 2}
+  FinishedNode: {fileID: 0}
   Started: 0
   Finished: 0

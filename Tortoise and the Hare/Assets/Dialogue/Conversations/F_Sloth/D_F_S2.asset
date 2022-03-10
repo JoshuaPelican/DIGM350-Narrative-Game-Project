@@ -17,6 +17,7 @@ MonoBehaviour:
     down.
   DialogueSpeed: 0.89
   ConditionsToSet: []
-  EventsToTrigger: []
-  Visited: 0
+  EventsToTrigger:
+  - {fileID: 11400000, guid: b1a9f9d3bc21d2849bd82a8907a2809b, type: 2}
+  Visited: 1
   nextNode: {fileID: 0}
