@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 22
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 23
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 24
+  controlID: 104
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 25
+  controlID: 105
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 115
+  controlID: 20
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1532,9 +1532,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: c254ffff7a55ffff506effff16fbffff
+      m_SelectedIDs: b4db0000
+      m_LastClickedID: 56244
+      m_ExpandedIDs: 7272ffff2a73ffff008cffff0ee5fffff0f7ffffd2f8ffff16fbffff2a6b0000726b000046d30000f6da000054db0000e2e40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1805,9 +1805,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 50.070904, y: 2.4348154, z: -31.50856}
+    m_Target: {x: 51.68435, y: 3.861, z: -35.547928}
     speed: 2
-    m_Value: {x: 50.070904, y: 2.4348154, z: -31.50856}
+    m_Value: {x: 51.684345, y: 3.8610032, z: -35.547924}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1854,13 +1854,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.07133438, y: 0.83402467, z: -0.12027329, w: 0.53518057}
+    m_Target: {x: 0.049400046, y: 0.9463896, z: -0.24226493, w: 0.21165943}
     speed: 2
-    m_Value: {x: 0.07127846, y: 0.83337086, z: -0.12017901, w: 0.534761}
+    m_Value: {x: 0.049723983, y: 0.9453219, z: -0.24199878, w: 0.21291006}
   m_Size:
-    m_Target: 5.8988066
+    m_Target: 5.039126
     speed: 2
-    m_Value: 5.8988066
+    m_Value: 5.041016
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1954,23 +1954,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Dialogue/Conversations/Tortoise/Intro
+    - Assets/Dialogue/Conversations/Tortoise/B_Win
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Dialogue/Conversations/Tortoise/Intro
+  - Assets/Dialogue/Conversations/Tortoise/B_Win
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\pelki\Unity\DIGM350-Narrative-Game-Project\Tortoise
     and the Hare
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 141.0008}
-    m_SelectedIDs: 888f0000
-    m_LastClickedID: 36744
-    m_ExpandedIDs: 00000000308f0000328f0000348f0000368f0000388f00003a8f00003c8f00003e8f0000408f0000428f0000448f0000468f0000488f00004a8f00004c8f00004e8f0000508f0000528f0000
+    scrollPos: {x: 0, y: 192}
+    m_SelectedIDs: 728f0000
+    m_LastClickedID: 36722
+    m_ExpandedIDs: 00000000308f0000328f0000348f0000368f0000388f00003a8f00003c8f00003e8f0000408f0000428f0000448f0000468f0000488f00004a8f00004c8f00004e8f0000508f0000528f0000628f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
