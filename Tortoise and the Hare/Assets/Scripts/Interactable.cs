@@ -3,11 +3,12 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public UnityEvent OnPickup;
+    [SerializeField] bool RemoveOnInteract = true;
+    public UnityEvent OnInteract;
 
-    public void Pickup()
+    public void Interact()
     {
-        OnPickup?.Invoke();
-        gameObject.SetActive(false);
+        OnInteract?.Invoke();
+        gameObject.SetActive(!RemoveOnInteract);
     }
 }

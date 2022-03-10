@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f2105bc93ace64b8683fe7834f519b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPickup:
+  RemoveOnInteract: 1
+  OnInteract:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: fda04ca16f6b83f4d877a842d4f06424, type: 2}

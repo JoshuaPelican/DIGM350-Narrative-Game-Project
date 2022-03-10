@@ -16,7 +16,7 @@ MonoBehaviour:
   Dialogue: Uh, yup. Try to keep track of them this time.
   DialogueSpeed: 0.95
   ConditionsToSet:
-  - {fileID: 11400000, guid: 29704e1516ab08349a7f74a2ae08af54, type: 2}
+  - {fileID: 11400000, guid: 5dbd4f8dc9bc94d44ad95a5ae4f82eb2, type: 2}
   EventsToTrigger: []
   Visited: 1
   nextNode: {fileID: 11400000, guid: 8968a01f4fbce98468278743fc11298a, type: 2}

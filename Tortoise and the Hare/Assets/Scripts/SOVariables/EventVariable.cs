@@ -8,6 +8,6 @@ public class EventVariable : ScriptableObject
 
     public void Invoke()
     {
-        OnInvoke.Invoke();
+        OnInvoke?.Invoke();
     }
 }

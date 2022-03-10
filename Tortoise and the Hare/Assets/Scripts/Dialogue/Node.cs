@@ -29,8 +29,8 @@ public class Node : ScriptableObject
     [ValueDropdown("GetAllEvents", FlattenTreeView = true, DropdownTitle = "Select An Event")]
     public EventVariable[] EventsToTrigger;
 
-    [HideInInspector]
-    public bool Visited;
+    [System.NonSerialized]
+    public bool Visited = false;
 
     public void Visit()
     {
