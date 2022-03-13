@@ -51,7 +51,7 @@ Material:
     - _Floater_Max_Distance: 3
     - _Max_Distance: 5
     - _Min_Distance: 0
-    - _Normal_Strength: 0.1
+    - _Normal_Strength: 2
     - _Ocean_Scale: 10
     - _Ocean_Speed: 0.001
     - _Ocean_Strength: 2
